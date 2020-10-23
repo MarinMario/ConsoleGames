@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{756DF349-A108-46D4-BF46-BC6F5C63082D}</ProjectGuid>
+    <ProjectGuid>{4B99E858-4E9E-455E-BA3A-CD0DE86A661C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Pong</RootNamespace>
-    <AssemblyName>Pong</AssemblyName>
+    <RootNamespace>BreakOut</RootNamespace>
+    <AssemblyName>BreakOut</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

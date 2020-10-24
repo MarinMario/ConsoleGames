@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace BreakOut
 {
@@ -96,7 +95,7 @@ namespace BreakOut
         void DrawPaddle(ConsoleColor color)
         {
             for (var i = 1; i < paddleSize; i++)
-                SetColor(color, (paddle.Item1 + i, paddle.Item2)) ;
+                SetColor(color, (paddle.Item1 + i, paddle.Item2));
         }
 
         void Piece((int, int) piece)
@@ -122,7 +121,7 @@ namespace BreakOut
                     SetColor(color, (piece.Item1 + x, piece.Item2 + y));
         }
 
-        public void SetColor(ConsoleColor color, (int, int) pos)
+        void SetColor(ConsoleColor color, (int, int) pos)
         {
             Console.SetCursorPosition(pos.Item1, pos.Item2);
             Console.BackgroundColor = color;

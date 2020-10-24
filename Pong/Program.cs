@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Pong
@@ -23,6 +19,7 @@ namespace Pong
         (int, int) paddlePlayer;
         (int, int) paddleOpponent;
         readonly ConsoleColor paddleColor = ConsoleColor.Red;
+
         public Game()
         {
             Console.CursorVisible = false;
@@ -56,12 +53,11 @@ namespace Pong
         }
 
         int opponentTarget = 0;
-        int updateOpponentTarget = 0;
         void PaddleOpponent()
         {
-            if (updateOpponentTarget % 2 == 0)
+            var rand = new Random();
+            if (rand.Next(0, 10) > 0)
                 opponentTarget = ballPosition.Item2 - paddleSize / 2;
-            updateOpponentTarget += 1;
 
             DrawPaddle(windowColor, paddleOpponent);
             if (paddleOpponent.Item2 > opponentTarget)
@@ -73,7 +69,6 @@ namespace Pong
             if (paddleOpponent.Item2 > window.Item2 - paddleSize) paddleOpponent.Item2 = window.Item2 - paddleSize;
             DrawPaddle(paddleColor, paddleOpponent);
         }
-
 
         void Ball()
         {
@@ -135,6 +130,7 @@ namespace Pong
             Console.BackgroundColor = ConsoleColor.Black;
         }
     }
+
     class Program
     {
         [STAThread]
